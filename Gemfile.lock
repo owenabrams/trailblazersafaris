@@ -119,7 +119,7 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0225)
-    mimemagic (0.3.10)
+    mimemagic (0.4.3)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
@@ -147,7 +147,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rails (6.1.3.1)
+    rails (6.0.0)
       actioncable (= 6.0.0)
       actionmailbox (= 6.0.0)
       actionmailer (= 6.0.0)
