@@ -1,0 +1,243 @@
+.form-button {
+  position: relative;
+
+  i {
+    position: absolute;
+      top: 30%;
+      right: 50px;
+    color: #202020;
+    font-size: 20px;
+    z-index: 100;
+    transition: 0.3s;
+  }
+
+  &:hover {
+    i {
+      color: white;
+      right: 40px;
+    }
+  }
+}
+
+.contact-first {
+  // height: 100vh;
+  width: 100%;
+  background: gray;
+  background-image: url('https://images.pexels.com/photos/631292/pexels-photo-631292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  padding: 120px 0 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  h1 {
+    font-family: $primary-font;
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 0;
+  }
+
+  &_title {
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+    hr {
+      display: block;
+      width: 80px;
+      clear: both;
+      border-bottom: 3px solid white;
+    }
+
+    h2 {
+      font-family: $secondary-font;
+      color: white;
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 600px;
+
+    & label {
+      color: white;
+      font-family: $secondary-font;
+      font-weight: 300;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    & fieldset {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0;
+
+      & input, & textarea, & select {
+        background-color: rgba(190,190,190,0.4);
+        border: 0;
+        padding: 10px;
+        width: 100%;
+        font-family: $secondary-font;
+        margin: 10px 0;
+        font-size: 16px;
+        font-weight: 300;
+        color: white !important;
+        transition: 0.4s;
+
+        &:hover {
+          background-color: rgba(190,190,190,0.6)
+        }
+
+        &:focus {
+          outline: 0;
+          background-color: rgba(190,190,190,0.6);
+        }
+
+        & ::-webkit-input-placeholder { /* Edge */
+          color: white;
+        }
+
+        & :-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: white;
+        }
+      }
+
+      & input::placeholder, & textarea::placeholder {
+          color: white;
+      }
+
+      & select:not([multiple]) {
+        margin: 10px 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 10px !important;
+        height: 50px;
+        border-radius: 0px !important;
+      }
+    }
+
+    & input[type="submit"] {
+      width: 100%;
+      color: #202020;
+      text-transform: uppercase;
+      font-family: $secondary-font;
+      font-weight: 300;
+      font-size: 20px;
+      padding: 10px 0;
+      border: none;
+      transition: 0.8s;
+
+      &:hover {
+        background-color: #202020;
+        color: white;
+      }
+    }
+  }
+
+  @include for-phone-only {
+    // height: 130vh;
+    padding: 120px 0 80px 20px;
+
+    hr {
+      width: 120px;
+      border-bottom: 1px solid white;
+    }
+
+    h2 {
+      font-size: 14px;
+    }
+
+    & form {
+      width: 90vw;
+      min-width: 80vw;
+
+      & fieldset {
+        & input, & textarea, & select {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  @include for-small-phone-only {
+    // height: 150vh;
+  }
+}
+
+.contact-map {
+  padding: 60px 40px 40px 40px;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://res.cloudinary.com/trailblazer-safari/image/upload/q_auto/v1566921180/ugandan-safari-contact-left_dnzgl7.png');
+  background-size: cover;
+  background-position: left;
+  @include absColumnFSFS;
+
+  hr {
+    display: block;
+    width: 50px;
+    clear: both;
+    border-bottom: 2px solid #3E3E3E;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-family: $primary-font;
+    font-weight: 700;
+    font-size: 40px;
+    color: #3E3E3E;
+  }
+
+  h3, p {
+    font-family: $secondary-font;
+    font-size: 18px;
+    color: #3E3E3E;
+    font-weight: 300;
+  }
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.contact-second {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+
+  @include for-medium-devices-down {
+    display: flex;
+    flex-direction: column;
+    height: 120vh;
+
+    .contact-map {
+      width: 100%;
+      padding: 60px 40px 40px 20px;
+
+      h2 {
+        font-size: 30px;
+      }
+
+      h3, p {
+        font-size: 14px;
+      }
+
+    }
+
+    #map {
+      height: 50vh;
+    }
+  }
+}
+

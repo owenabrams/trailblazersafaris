@@ -1,0 +1,39 @@
+<div class="safaris-index">
+  <div class="safaris-index_header">
+    <hr align="left"><h2>INDEX</h2>
+  </div>
+  <h1>ALL OF OUR SAFARIS</h1>
+  <div class="swiper-container swiper2">
+    <div class="swiper-wrapper">
+      <% @safaris.each do |safari|  %>
+          <%= link_to safari_path(safari), class: "swiper-slide safari-card", style: "" do %>
+          <div style="padding: 20px; height: 100%; width: 100%; background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)),url('<% if safari.banner_image.present? %><%= cl_image_path safari.banner_image %><% else %><%= image_tag 'https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt: "london web design" %><% end %>')">
+              <div class="safari-card_header">
+                <hr align="left"><h2>SAFARI</h2>
+              </div>
+              <h1><%= safari.title %></h1>
+              <p><%= safari.description.truncate(130) %></p>
+              <p><%= safari.created_at.strftime("%Y-%m-%d") %></p>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination2"></div>
+  </div>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+  var swiper2 = new Swiper('.swiper2', {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    mousewheel: true,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination2',
+      clickable: false,
+    },
+  });
+</script>

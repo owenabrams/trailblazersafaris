@@ -1,0 +1,23 @@
+.hoxton-footer {
+    width: 100%;
+    height: 40px;
+    z-index: 1000;
+    background-color: #1D1D1F;
+    @include absCenterSA;
+
+    & p {
+      font-family: $secondary-font;
+      font-weight: 300;
+    }
+
+    & a {
+      color: #DBDBDB;
+      transition: all 0.4s;
+      font-family: $secondary-font;
+      font-weight: 300;
+
+      &:hover {
+        color: white;
+      }
+    }
+}

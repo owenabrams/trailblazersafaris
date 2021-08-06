@@ -1,0 +1,122 @@
+<div class="swiper-container swiper1">
+  <div class="home swiper-wrapper">
+    <section class="home-first swiper-slide">
+      <%= image_tag 'https://images.pexels.com/photos/2862070/pexels-photo-2862070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' %>
+      <%#= cl_video_tag("ugandasafarifire_srpn97", :audio_codec=>"none", :quality=>"auto", :autoplay=> true, :loop=> true, :controls=> false, :playsinline=> true) %>
+      <div class="home-first-content">
+        <%= cl_image_tag("ugandan-safari-uganda-flag_t2opqo.png", :quality=>"auto") %>
+        <h2>Discover The Real</h2>
+        <h1>UGANDA</h1>
+        <%= cl_image_tag("text-decoration_vjhrdn.png", :quality=>"auto") %>
+      </div>
+    </section>
+    <section class="home-second swiper-slide">
+      <div class="home-second-content">
+        <hr align="left">
+        <h2>Bespoke Safaris</h2>
+        <h1>BUILT FOR YOU</h1>
+        <p>
+          Our small &amp; specialised team of Ugandans are experts in planning bespoke trips ,
+          whatever your trip length or purpose. We’re passionate about creating unique experiences for
+          our clients and have local knowledge to deliver every time. <br><br>
+          We are constantly improving our safaris by experiencing the adventures ourselves and by listening to every client who has trusted us with our magical safaris.
+        </p>
+        <%= link_to 'Browse Safaris', safaris_path, class: "white-button-lg" %>
+      </div>
+    </section>
+    <section class="home-third swiper-slide">
+      <div class="home-third-content">
+        <hr align="right">
+        <h2>This is Not a Documentary</h2>
+        <h1>SEE THEM UP CLOSE</h1>
+        <p>
+          Have you ever watched a wildlife documentary and thought about what it would be like to
+          experience it in person? From watching a Silverback gorilla protect his family to seeing tree
+          climbing lions, we have a wildlife itinerary for you.
+          <br><br>
+          Local and Foreign zoologists help us understand and observe the behaviour of our fauna allowing us to curate an experience that let's you see our wildlife in extraordinary momements.
+        </p>
+        <%= link_to 'Gorilla Trek', safaris_path, class: "white-button-lg" %>
+      </div>
+    </section>
+    <section class="home-fourth swiper-slide">
+      <div class="safaris-index">
+        <div class="safaris-index_header">
+          <hr align="left"><h2>INDEX</h2>
+        </div>
+        <h1>OUR TOP SAFARIS</h1>
+        <div class="swiper-container swiper2">
+          <div class="swiper-wrapper">
+            <% @safaris.each do |safari|  %>
+                <%= link_to safari_path(safari), class: "swiper-slide safari-card", style: "" do %>
+                  <div style="padding: 20px; height: 100%; width: 100%; background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)),url('<% if safari.banner_image.present? %><%= cl_image_path safari.banner_image %><% else %><%= image_tag 'https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', alt: "london web design" %><% end %>')">
+                    <div class="safari-card_header">
+                      <hr align="left"><h2>SAFARI</h2>
+                    </div>
+                    <h1><%= safari.title %></h1>
+                    <p><%= safari.description.truncate(130) %></p>
+                    <p><%= safari.created_at.strftime("%Y-%m-%d") %></p>
+                  </div>
+                <% end %>
+            <% end %>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination swiper-pagination2"></div>
+        </div>
+      </div>
+      <!-- Swiper JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper2 = new Swiper('.swiper2', {
+          slidesPerView: 4,
+          spaceBetween: 30,
+          mousewheel: true,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination2',
+            clickable: false,
+          },
+        });
+      </script>
+
+    </section>
+    <% if user_signed_in? %>
+      <section class="home-fifth swiper-slide">
+        <div class="home-fifth_content">
+          <h4>Dashboard</h4>
+          <%= link_to 'Add Safari', new_safari_path, class: "home-fourth_content_button" %>
+          <br>
+          <%= link_to 'Add Hotel', new_hotel_path, class: "home-fourth_content_button" %>
+          <br>
+          <%= link_to 'Add Attraction', new_attraction_path, class: "home-fourth_content_button" %>
+        </div>
+      </section>
+    <% else %>
+    <% end %>
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination swiper-pagination1"></div>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper1 = new Swiper('.swiper1', {
+      direction: 'vertical',
+      slidesPerView: 1,
+      spaceBetween: 30,
+      mousewheel: true,
+      uniqueNavElements: true,
+      pagination: {
+        el: '.swiper-pagination1',
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+  });
+</script>

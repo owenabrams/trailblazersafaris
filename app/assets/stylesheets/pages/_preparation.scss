@@ -1,0 +1,201 @@
+.preparation-first {
+  height: 60vh;
+  width: 100%;
+  background-image: url('https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  color: white;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  hr {
+    display: block;
+    width: 40px;
+    clear: both;
+    border-bottom: 2px solid white;
+    margin-right: 10px;
+  }
+
+  h2 {
+    font-family: $secondary-font;
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  h1 {
+    font-family: $primary-font;
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 0;
+  }
+
+  @include for-phone-only {
+    height: 40vh;
+    padding: 20px;
+
+    h1 {
+      font-size: 22px;
+    }
+  }
+
+  @include for-small-phone-only {
+
+    h1 {
+      font-size: 17px;
+    }
+  }
+}
+
+.preparation-second {
+  // height: 100vh;
+  width: 100%;
+  background-image: url('https://res.cloudinary.com/trailblazer-safari/image/upload/q_auto/v1566986638/ugandan-safari-preparation-two_let2xm.png');
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 40px;
+
+  @include for-medium-devices-down {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+}
+
+.text-separator {
+  height: auto;
+  width: 150px;
+  margin: 0 30px;
+
+  @include for-medium-devices-down {
+    height: 0;
+    width: 0;
+  }
+}
+
+.preparation-second-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  hr {
+    display: block;
+    width: 40px;
+    clear: both;
+    border-bottom: 2px solid #3E3E3E;
+    margin-right: 10px;
+  }
+
+  h2 {
+    font-family: $secondary-font;
+    color: #3E3E3E;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  h1 {
+    font-family: $primary-font;
+    color: #3E3E3E;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+
+  p, li {
+    font-family: $secondary-font;
+    color: #3E3E3E;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    max-width: 800px;
+  }
+
+  a {
+    font-family: $secondary-font;
+    color: #3E3E3E;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    max-width: 800px;
+  }
+
+}
+
+
+.preparation-second-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  hr {
+    display: block;
+    width: 40px;
+    clear: both;
+    border-bottom: 2px solid #3E3E3E;
+    margin-right: 10px;
+  }
+
+  h2 {
+    font-family: $secondary-font;
+    color: #3E3E3E;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  h1 {
+    font-family: $primary-font;
+    color: #3E3E3E;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 30px;
+  }
+
+  p, li {
+    font-family: $secondary-font;
+    color: #3E3E3E;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 28px;
+    max-width: 800px;
+  }
+
+  a {
+    font-family: $secondary-font;
+    color: #3E3E3E;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    max-width: 800px;
+  }
+}

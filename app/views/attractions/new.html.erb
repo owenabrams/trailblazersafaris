@@ -1,0 +1,14 @@
+
+<div class="safaris-new">
+  <br><br>
+  <br><br>
+  <h1>New Attraction</h1>
+    <%= simple_form_for(@attraction) do |f| %>
+      <%= f.input :image %>
+      <%= f.input :image_cache, as: :hidden %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.submit %>
+    <% end %>
+</div>
+

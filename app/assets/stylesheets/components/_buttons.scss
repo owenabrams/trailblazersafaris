@@ -1,0 +1,49 @@
+
+.white-button-lg {
+  background-color: white;
+  font-family: $secondary-font;
+  color: #010101;
+  padding: 8px 30px;
+  border-radius: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  box-shadow: 1px 3px 10px rgba(0,0,0,0.3);
+
+  &:hover {
+    color: #010101;
+    text-decoration: none;
+    top: 1px;
+  }
+
+  @include for-phone-only {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+.home-fourth_content_button {
+  background-color: blue;
+  padding: 10px 20px;
+  margin: 5px;
+  color: white;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: blue;
+    opacity: 0.8;
+    color: white;
+  }
+}
+
+.delete-button {
+  padding: 10px 20px;
+  border-radius: 200px;
+  color: white;
+  background-color: red;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

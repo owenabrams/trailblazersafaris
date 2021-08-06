@@ -1,0 +1,87 @@
+<div class="contact">
+  <div class="contact-first">
+    <h1>Booking Enquiries</h1>
+    <div class="contact-first_title">
+      <hr align="left">
+      <h2>PLEASE FILL OUT DETAILS</h2>
+    </div>
+    <form id="fs-frm" name="survey-form" accept-charset="utf-8" action="https://formspree.io/info@trailblazer.co.ug" method="post">
+      <fieldset id="fs-frm-inputs">
+        <label for="name">1. Your Details</label>
+        <input type="text" name="name" id="full-name" placeholder="First and Last Name" required="">
+        <input type="email" name="_replyto" id="email-address" placeholder="Your Email Address" required="">
+        <fieldset id="fs-frm-selects">
+          <label for="timely">2. Travel Details</label>
+          <select name="timely" id="timely" required="">
+            <option value="Choose" selected="" disabled="">Safari of Interest</option>
+            <%= Safari.all.each do |safari| %>
+              <option value="<%= safari.id %>"><%= safari.title %></option>
+            <% end %>
+          </select>
+          <select name="quality" id="quality" required="">
+            <option value="Choose" selected="" disabled="">How Many People Are You Traveling With</option>
+            <option value="1">1-5</option>
+            <option value="2">5-10</option>
+            <option value="3">10-15</option>
+          </select>
+        </fieldset>
+        <label for="name">3. Your Message</label>
+        <textarea rows="3" name="message" id="message" placeholder="Please write us a detailed description of your inquiry" required=""></textarea>
+        <input type="hidden" name="_subject" id="email-subject" value="Survey Responses">
+      </fieldset>
+      <div class="form-button">
+        <input type="submit" value="SUBMIT">
+        <i class="fas fa-long-arrow-alt-right"></i>
+      </div>
+    </form>
+  </div>
+  <div class="contact-second">
+    <div class="contact-map">
+      <h2>Contact Information</h2>
+      <hr align="left">
+      <div class="contact-details">
+        <h3><b>Main Office</b></h3>
+        <p>5 Naguru Drive Close, Kampala, Uganda</p>
+      </div>
+      <br>
+      <div class="contact-details">
+        <h3><b>Entebbe Airport</b></h3>
+        <p>14 Kitaasa Rd, Entebbe, Uganda</p>
+      </div>
+      <br>
+      <div class="contact-details">
+        <h3><b>General Inquiries</b></h3>
+        <p>
+          info@trailblazer.com - <strong>General Inquiries</strong>
+          <br>
+          mhenry@trailblazer.co.ug - <strong>Company Director</strong>
+          <br>
+          <!-- sales@trailblazer.com -->
+        </p>
+      </div>
+      <br>
+      <div class="contact-details">
+        <h3><b>Call Us</b></h3>
+        <p>
+          (+256) 782 469402 - Customer Service
+          <br>
+          (+256) 788 189080 - Sales
+          <br>
+          (+256) 705 382993 - Reservations
+        </p>
+      </div>
+
+      <div class="contact-social-media">
+        <p>Check us out:</p>
+        <a href="https://www.facebook.com/TrailblazerUg/?ref=aymt_homepage_panel&eid=ARBpy9ApMnkK_OoyFSsoHAdIQxSNZ32X9ky68UpW4GWLLl7MB2yYXwCb_m37iMDlInTC4xY04zoUaN1M" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/trailblazersafarisug/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitter.com/TrailblazerUg" target="_blank"><i class="fab fa-twitter-square"></i></a>
+      </div>
+    </div>
+    <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+</div>

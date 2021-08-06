@@ -1,0 +1,13 @@
+<div class="safaris-new">
+  <br><br>
+  <br><br>
+  <h1>Edit Hotel</h1>
+    <%= simple_form_for(@hotel) do |f| %>
+      <%= f.input :image %>
+      <%= f.input :image_cache, as: :hidden %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :price_night %>
+      <%= f.submit %>
+    <% end %>
+</div>

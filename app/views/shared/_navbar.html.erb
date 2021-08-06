@@ -1,0 +1,41 @@
+<div class="navbar navbar-expand-sm navbar-lewagon">
+  <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+    <h1>Trailblazer Safaris</h1>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="social-media">
+    <p>CHECK US OUT:</p>
+    <a href="https://www.facebook.com/TrailblazerUg/?ref=aymt_homepage_panel&eid=ARBpy9ApMnkK_OoyFSsoHAdIQxSNZ32X9ky68UpW4GWLLl7MB2yYXwCb_m37iMDlInTC4xY04zoUaN1M" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/trailblazersafarisug/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.twitter.com/TrailblazerUg" target="_blank"><i class="fab fa-twitter-square"></i></a>
+  </div>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Safaris", safaris_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "About", about_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Reviews", reviews_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Preparation", preparation_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Contact", contact_path, class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</div>

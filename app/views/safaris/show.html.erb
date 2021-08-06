@@ -1,0 +1,151 @@
+<div class="safari-show">
+  <div class="safari-show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.8)), url('<%= cl_image_path @safari.banner_image %>'); background-size: cover;">
+    <div class="safari-show-banner_header">
+        <hr align="left"><h2>SAFARI</h2>
+    </div>
+    <h1><%= @safari.title %> - <%= @safari.price %> Price</h1>
+    <h2><%= @safari.description %></h2>
+    <%= link_to 'Book Trip', contact_path %>
+  </div>
+  <div class="safari-show-content">
+    <div class="safari-show-content_itinerary">
+      <div class="safari-show-content_itinerary_one">
+        <div class="safari-show-content_itinerary_header">
+            <hr align="left"><h2>SAFARI</h2>
+        </div>
+        <h1>Itinerary</h1>
+        <p><%= @safari.itinerary_description%></p>
+      </div>
+      <div class="safari-show-content_itinerary_two">
+        <div class="safari-show-content_itinerary_header">
+            <hr align="left"><h2>SAFARI</h2>
+        </div>
+        <h1>What To Expect</h1>
+        <p><%= @safari.expect%></p>
+      </div>
+    </div>
+    <%= cl_image_tag("text-separator_ldbcyu.png", class: "safari-text-separator" )%>
+    <div class="swiper-container swiper5 safari-show-content_schedule">
+        <div class="swiper-wrapper">
+          <% @schedules.each_cons(2) do |schedule|%>
+              <div class="swiper-slide hotels-slide">
+                <h1><%= schedule[0].title %></h1>
+                <p><%= schedule[0].description %></p>
+                <br><br>
+                <h1><%= schedule[1].title %></h1>
+                <p><%= schedule[1].description %></p>
+              </div>
+          <% end %>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination5"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next day-next">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="swiper-button-prev day-prev">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+    </div>
+  </div>
+  <div class="safari-show-attractions">
+    <div class="safari-show-attractions_header">
+      <div class="safari-show-attractions_header_title">
+        <hr align="left"><h2>TRIP GUIDE</h2>
+      </div>
+      <h1>Look Out For</h1>
+    </div>
+    <div class="swiper-container swiper4">
+      <div class="swiper-wrapper">
+        <% @safari_attractions.each do |attraction| %>
+          <div class="swiper-slide safari-show-attractions_content">
+            <div class="safari-show-attractions_content_image">
+              <%= cl_image_tag attraction.attraction.image %>
+            </div>
+            <div class="safari-show-attractions_content_text">
+              <h1><%= attraction.attraction.title %></h1>
+              <p><%= attraction.attraction.description %></p>
+              <%= link_to 'More Information', contact_path %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination4"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next attraction-next">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <div class="swiper-button-prev attraction-before">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    </div>
+  </div>
+  <div class="safari-show-stay">
+    <div class="safari-show-stay_includes">
+      <div class="safari-show-stay_includes_one">
+        <div class="safari-show-stay_header">
+            <hr align="left"><h2>TRIP GUIDE</h2>
+        </div>
+        <h1>What It Includes</h1>
+        <p><%= @safari.includes_description%></p>
+      </div>
+      <div class="safari-show-stay_inclues_two">
+        <div class="safari-show-stay_header">
+            <hr align="left"><h2>TRIP GUIDE</h2>
+        </div>
+        <h1>Hotels & Transportation</h1>
+        <p><%= @safari.hotels_description%></p>
+      </div>
+    </div>
+    <%= cl_image_tag("text-separator_ldbcyu.png", class: "safari-text-separator" )%>
+    <div class="swiper-container swiper4 safari-show-stay_transport">
+      <div class="swiper-wrapper">
+        <% @safari_hotels.each do |hotel| %>
+          <div class="swiper-slide safari-hotel-slide">
+            <%= cl_image_tag hotel.hotel.image %>
+            <h1><%= hotel.hotel.title %></h1>
+            <h6 style="font-weight: 300; color: #474747;"><%= hotel.hotel.price_night %> - Per Night</h6>
+            <p><%= hotel.hotel.description %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+  var swiper4 = new Swiper('.swiper4', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination2',
+      clickable: false,
+    },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.attraction-next',
+      prevEl: '.attraction-before',
+    },
+  });
+
+  var swiper5 = new Swiper('.swiper5', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination5',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.day-next',
+      prevEl: '.day-prev',
+    },
+  });
+
+</script>
+

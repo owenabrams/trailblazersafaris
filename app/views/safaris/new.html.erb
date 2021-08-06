@@ -1,0 +1,19 @@
+
+<div class="safaris-new">
+  <br><br>
+  <br><br>
+  <h1>New Safari</h1>
+    <%= simple_form_for(@safari) do |f| %>
+    <%= f.input :banner_image %>
+    <%= f.input :banner_image_cache, as: :hidden %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :itinerary_description %>
+    <%= f.input :expect %>
+    <%= f.input :includes_description %>
+    <%= f.input :hotels_description %>
+    <%= f.input :price %>
+      <%= f.submit %>
+    <% end %>
+</div>
+

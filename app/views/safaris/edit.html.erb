@@ -1,0 +1,63 @@
+<div class="safaris-edit">
+  <br><br>
+  <br><br>
+  <h1>Edit Safari / Add a Hotel / Add an Attraction</h1>
+    <%= simple_form_for(@safari) do |f| %>
+
+      <h2>Add Your Main Image Here</h2>
+      <%= f.input :banner_image %>
+      <%= f.input :banner_image_cache, as: :hidden %>
+      <%= f.input :title %>
+      <%= f.input :price %>
+      <%= f.input :description, as: :text  %>
+      <%= f.input :itinerary_description, as: :text  %>
+      <%= f.input :expect, as: :text  %>
+      <%= f.input :includes_description, as: :text %>
+      <%= f.input :hotels_description, as: :text  %>
+
+      <%= f.submit %>
+    <% end %>
+
+    <h1>Your Itinerarys</h1>
+
+    <div class="safari-display-schedule">
+      <h3>Schedule List</h3>
+      <% @schedule.each do |schedule| %>
+      <div class="schedule-edit">
+        <%= schedule.title %>
+        <%= schedule.description %>
+        <%= link_to 'Delete', safari_schedule_path(@safari, schedule), confirm: "Are you sure?", method: :delete %>
+        <br><br>
+      </div>
+      <% end %>
+    </div>
+
+    <h1>Add 1 Itinerary Day</h1>
+
+    <div class="safari-edit-schedule">
+      <%= simple_form_for [@safari, Schedule.new] do |f| %>
+          <%= f.input :title %>
+          <%= f.input :description, as: :text %>
+          <%= f.submit %>
+      <% end %>
+    </div>
+
+    <h1>Add Hotel</h1>
+
+    <%= simple_form_for [@safari, SafariHotel.new] do |f| %>
+        <%= f.input :hotel_id, as: :check_boxes,collection: Hotel.all %>
+        <%= f.submit %>
+    <% end %>
+
+    <h1>Add Attraction</h1>
+
+    <%= simple_form_for [@safari, SafariAttraction.new] do |f| %>
+        <%= f.input :attraction_id, as: :check_boxes, collection: Attraction.all %>
+        <%= f.submit %>
+    <% end %>
+
+    <h1>Delete This Safari</h1>
+    <p>Press the following button if you would like to permanently delete this safari</p>
+
+    <%= link_to 'Delete Safari',safari_path(@safari), method: :delete,class: "delete-button" %>
+</div>

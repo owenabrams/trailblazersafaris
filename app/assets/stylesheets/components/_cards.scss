@@ -1,0 +1,283 @@
+.swiper-container a:hover {
+  text-decoration: none;
+}
+
+.safari-card {
+  width: 350px;
+  max-width: 320px;
+  min-width: 320px;
+  height: 400px;
+  background-color: #ddd;
+  overflow: hidden;
+  background-size: cover;
+  border-radius: 9px;
+  @include absColumnFSFS;
+  // padding: 20px 30px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  transition: 0.3s;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    hr {
+      display: block;
+      width: 20px !important;
+      clear: both;
+      border-bottom: 2px solid white;
+      margin-right: 10px;
+      color: white;
+    }
+
+    h2 {
+      font-family: $secondary-font;
+      color: white;
+      font-size: 12px !important;
+      font-weight: 300;
+      margin-bottom: 0;
+      text-align: left;
+      color: white;
+    }
+  }
+
+  & h1 {
+    text-align: left;
+    width: 100%;
+    font-family: $primary-font;
+    color: white;
+    font-weight: 700;
+    font-size: 28px !important;
+    margin-bottom: 15px;
+  }
+
+  & p {
+    font-size: 16px;
+    font-family: $secondary-font;
+    font-weight: 300;
+    color: white;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  & * i {
+    font-size: 23px !important;
+  }
+
+  & p:last-child {
+    font-size: 16px;
+    position: absolute;
+      bottom: 20px;
+  }
+
+  &_stars {
+    color: #FAD45B;
+    margin-bottom: 20px;
+  }
+
+  @include for-small-phone-only {
+  max-width: 280px;
+  min-width: 280px;
+
+    & h1 {
+      font-size: 24px !important;
+    }
+
+    & p {
+      font-size: 14px;
+    }
+
+    & * i {
+      font-size: 19px !important;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+}
+
+.review-card {
+  width: 350px;
+  max-width: 320px;
+  min-width: 320px;
+  height: 400px;
+  background-color: #ddd;
+  background-image: url('https://res.cloudinary.com/trailblazer-safari/image/upload/q_auto/v1567614994/uganda_safari_review_card_2_sndpsb.png');
+  overflow: hidden;
+  background-size: cover;
+  border-radius: 9px;
+  @include absColumnFSFS;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    hr {
+      display: block;
+      width: 20px !important;
+      clear: both;
+      border-bottom: 2px solid white;
+      margin-right: 10px;
+      color: white;
+    }
+
+    h2 {
+      font-family: $secondary-font;
+      color: white;
+      font-size: 12px !important;
+      font-weight: 300;
+      margin-bottom: 0;
+      text-align: left;
+      color: white;
+    }
+  }
+
+  & h1 {
+    text-align: left;
+    width: 100%;
+    font-family: $primary-font;
+    color: white;
+    font-weight: 700;
+    font-size: 28px !important;
+    margin-bottom: 15px;
+  }
+
+  & p {
+    font-size: 16px;
+    font-family: $secondary-font;
+    font-weight: 300;
+    color: white;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  & * i {
+    font-size: 23px !important;
+  }
+
+  & p:last-child {
+    font-size: 16px;
+    position: absolute;
+      bottom: 20px;
+  }
+
+  &_stars {
+    color: #FAD45B;
+    margin-bottom: 20px;
+  }
+
+  @include for-small-phone-only {
+  max-width: 280px;
+  min-width: 280px;
+
+    & h1 {
+      font-size: 24px !important;
+    }
+
+    & p {
+      font-size: 14px;
+    }
+
+    & * i {
+      font-size: 19px !important;
+    }
+  }
+}
+
+.review-card2 {
+  width: 350px;
+  max-width: 320px;
+  min-width: 320px;
+  height: 400px;
+  background-color: #ddd;
+  background-image: url('https://res.cloudinary.com/trailblazer-safari/image/upload/q_auto/v1567614994/uganda_safari_reviews_card_tmmhgv.png');
+  background-size: cover;
+  border-radius: 9px;
+  @include absColumnFSFS;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    hr {
+      display: block;
+      width: 20px !important;
+      clear: both;
+      border-bottom: 2px solid white;
+      margin-right: 10px;
+      color: white;
+    }
+
+    h2 {
+      font-family: $secondary-font;
+      color: white;
+      font-size: 12px !important;
+      font-weight: 300;
+      margin-bottom: 0;
+      text-align: left;
+      color: white;
+    }
+  }
+
+  & h1 {
+    text-align: left;
+    width: 100%;
+    font-family: $primary-font;
+    color: white;
+    font-weight: 700;
+    font-size: 28px !important;
+    margin-bottom: 15px;
+  }
+
+  & p {
+    font-size: 16px;
+    font-family: $secondary-font;
+    font-weight: 300;
+    color: white;
+    line-height: 30px;
+    text-align: left;
+  }
+
+  & p:last-child {
+    font-size: 16px;
+    position: absolute;
+      bottom: 20px;
+  }
+
+  & * i {
+    font-size: 23px !important;
+  }
+
+
+  &_stars {
+    color: #FAD45B;
+  }
+
+  @include for-small-phone-only {
+  max-width: 280px;
+  min-width: 280px;
+
+    & h1 {
+      font-size: 24px !important;
+    }
+
+    & p {
+      font-size: 14px;
+    }
+
+    & * i {
+      font-size: 19px !important;
+    }
+  }
+}
+
